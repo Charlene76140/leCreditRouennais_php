@@ -31,11 +31,11 @@
   <?php include ("layout/header/header.php"); ?>
 
     <main>
-      <section class="container-fluid my-5">
+      <section class="container my-5">
         <h2>Vos comptes bancaires</h2>
         <div class="row">
-          <?php include ("accounts.php"); ?>
-          <?php include ("acountsMake.php"); ?>
+        <?php include ("components/homepage/acountsMake.php"); ?>
+         
         </div>
       </section>
     </main>
@@ -48,7 +48,7 @@
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/validation.js"></script>
+
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>

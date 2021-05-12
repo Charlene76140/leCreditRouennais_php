@@ -142,11 +142,11 @@ section h2{
   margin: 2% 2%;
 }
 
-.sizeSection{
+/* .sizeSection{
   display: flex;
   flex-direction: column;
   padding: 4%;
-}
+} */
 
 table{
   border-collapse: collapse;
@@ -165,8 +165,9 @@ table th{
 }
 
 .sizeH2{
-  margin-bottom: 20%;
+  margin-bottom: 15%;
 }
+
 /*---------Footer mobile----------*/
 .sizeIcone{
   font-size: 30px;
@@ -188,7 +189,11 @@ table th{
   }
 
   nav{
-    font-size: 1.2em;
+    font-size: 1.3em;
+  }
+
+  .navbar-nav> .nav-item> .nav-link:hover{
+    color: rgba(255, 255, 255, 0.658);
   }
 
   /*----------main computer----------*/
@@ -206,24 +211,24 @@ table th{
     margin: 2% 2%;
   }
 
-  .section2{
+  /* .section2{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-  }
+  } */
 
-  .sizeArticle{
+  /* .sizeArticle{
     width: 40%;
     margin: 0 2% 0 2%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-  }
+  } */
 
-  .sizeButton{
+  /* .sizeButton{
     width: 35%;
     margin: auto;
-  }
+  } */
 
   .sizeH2{
     margin-bottom: 2%;

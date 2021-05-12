@@ -31,8 +31,8 @@
   <?php include ("layout/header/header.php"); ?>
 
   <main>
-    <h2 class="my-3 mx-5">Gérez mes comptes</h2>
-    <section class="container-fluid my-5 section2">
+    <section class="container-fluid my-5">
+      <h2 class="my-3 mx-5">Gérez mes comptes</h2>
       
     </section>
   </main>
@@ -45,7 +45,6 @@
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/validation.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>

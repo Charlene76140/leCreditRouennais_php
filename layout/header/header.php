@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
             <li class="nav-item">
-            <a class="nav-link" href="index.php">Accueil</a>
+            <a class="nav-link hoverlink" href="index.php">Accueil</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="statistiques.php">Statistiques</a>

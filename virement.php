@@ -13,9 +13,9 @@
   <meta property="og:image" content="">
 
   <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
-  <link rel="shortcut icon" href="../favicon.ico"/>
+  <link rel="shortcut icon" href="favicon.ico"/>
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
@@ -31,16 +31,9 @@
   <?php include ("layout/header/header.php"); ?>
 
   <main>
-    <section class="container my-5">
-      <h2 class="sizeH2">Les Statistiques</h2>
-      <table>
-        <tr>
-            <th>Indicateur</th>
-            <th>Valeur</th>
-            <th>Variation</th>
-        </tr>
-         <?php include ("components/stats/statistiquesMake.php") ?>
-      </table>
+    <section class="container-fluid my-5">
+      <h2 class="my-3 mx-5">Faire un virement</h2>
+      
     </section>
   </main>
 
