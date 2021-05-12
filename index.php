@@ -34,45 +34,8 @@
       <section class="container-fluid my-5">
         <h2>Vos comptes bancaires</h2>
         <div class="row">
-          <article class="container-fluid col-lg-3 me-lg-2 my-lg-5">
-            <div class="card text-center mt-4">
-              <div class="card-header py-lg-3 fs-5">Compte courant</div>
-              <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-muted">n°123456789</h6>
-                <p class="card-text">Solde : <strong>1 482,50€</strong></p>
-                <hr>
-                <p class="card-text onlyComputer">Dernière opération : <br/> <strong>64€25</strong> - Amazon</p>
-                <hr>
-                <a class="btn colorButton" href="#" role="button">Accedez au compte</a>
-              </div>
-            </div>
-          </article>
-          <article class="container-fluid col-lg-3 mx-lg-0 my-lg-5">
-            <div class="card text-center mt-4">
-              <div class="card-header py-lg-3 fs-5">Compte épargne</div>
-              <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-muted">n°987654321</h6>
-                <p class="card-text">Solde : <strong>2 459,60€</strong></p>
-                <hr>
-                <p class="card-text onlyComputer">Dernière opération : <br/> <strong>200€</strong> - vir.compte courant</p>
-                <hr>
-                <a class="btn colorButton" href="#" role="button">Accedez au compte</a>
-              </div>
-            </div>
-          </article>
-          <article class="container-fluid col-lg-3 ms-lg-2 my-lg-5">
-            <div class="card text-center mt-4">
-              <div class="card-header py-lg-3 fs-5">Compte retraite</div>
-              <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-muted">n°134679852</h6>
-                <p class="card-text">Solde : <strong>12 500€</strong></p>
-                <hr>
-                <p class="card-text onlyComputer">Dernière opération : <br/> <strong>50€</strong> - épargne programmé</p>
-                <hr>
-                <a class="btn colorButton" href="#" role="button">Accedez au compte</a>
-              </div>
-            </div>
-          </article>
+          <?php include ("accounts.php"); ?>
+          <?php include ("acountsMake.php"); ?>
         </div>
       </section>
     </main>
