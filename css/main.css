@@ -82,11 +82,10 @@ fieldset {
 textarea {
   resize: vertical;
 }
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-/*----------------------------general rules----------------------------------- */
+/*----------------------------general rules------------------------------ */
 *{
   margin: 0;
   padding: 0;
@@ -103,9 +102,8 @@ body{
 .bgColor, .colorButton{
   background-color: #829298;
 }
-
 /*----------For Layer----------*/
-.layer{
+/* .layer{
   height: 100vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.794);
@@ -126,9 +124,8 @@ body{
   justify-content: center;
   width: 70%;
   margin: auto;
-}
+} */
 /*------------------------------mobile version-----------------------------------*/
-
 /*----------Header mobile---------*/
 .onlyComputer{
   display: none;
@@ -139,14 +136,8 @@ hr{
 }
 
 section h2{
-  margin: 2% 2%;
+  margin: 6% 6%;
 }
-
-/* .sizeSection{
-  display: flex;
-  flex-direction: column;
-  padding: 4%;
-} */
 
 table{
   border-collapse: collapse;
@@ -164,8 +155,9 @@ table th{
   background-color:#829298;
 }
 
-.sizeH2{
-  margin-bottom: 15%;
+.sizeSection{
+  width: 80%;
+  margin: auto;
 }
 
 /*---------Footer mobile----------*/
@@ -195,7 +187,6 @@ table th{
   .navbar-nav> .nav-item> .nav-link:hover{
     color: rgba(255, 255, 255, 0.658);
   }
-
   /*----------main computer----------*/
   article{
     font-size: 0.9em;
@@ -207,36 +198,9 @@ table th{
     margin: 5% 25% 5% 25%;
   }
 
-  section h2{
-    margin: 2% 2%;
-  }
-
-  /* .section2{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  } */
-
-  /* .sizeArticle{
-    width: 40%;
-    margin: 0 2% 0 2%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  } */
-
-  /* .sizeButton{
-    width: 35%;
-    margin: auto;
-  } */
-
-  .sizeH2{
-    margin-bottom: 2%;
-  }
-
   table{
     border-collapse: collapse;
-    width: 70%;
+    width: 60%;
     margin: 5% 15%;
     text-align: center;
     height: 40vh;
@@ -252,6 +216,10 @@ table th{
     background-color:#829298;
   }
 
+  .sizeSection{
+    width: 30%;
+    margin: auto;
+  }
   /*----------Footer computer----------*/
   .sizeIcone{
     font-size:50px;

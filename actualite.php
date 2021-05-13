@@ -31,8 +31,8 @@
   <?php include ("layout/header/header.php"); ?>
 
   <main>
-    <section class="container-fluid my-5">
-      <h2 class="my-3 mx-5">Nos Actualités</h2>
+    <section class="container my-5">
+      <h2>Nos Actualités</h2>
       
     </section>
   </main>

@@ -30,12 +30,33 @@
     
   <?php include ("layout/header/header.php"); ?>
 
-  <main>
-    <section class="container my-5">
-      <h2>Gérez mes comptes</h2>
-      
-    </section>
-  </main>
+    <main>
+      <section class="container my-5">
+
+        <h2>Type de compte : </h2>
+        <table>
+          <thead>
+            <tr>
+              <th><?php echo $_GET['name']; ?></th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>Propriétaire du compte : <?php echo $_GET['owner']; ?></td>
+              </tr> 
+              <tr>
+                <td>Numéro de compte : <?php echo $_GET['number']; ?></td>
+              </tr> 
+              <tr>
+                <td>Solde : <?php echo $_GET['amount'] .' €' ?></td>
+              </tr> 
+              <tr>
+                <td>Dernière opération : <?php echo $_GET['last_operation'] ?></td>
+              </tr> 
+          </tbody>
+        </table>
+      </section>
+    </main>
 
   <?php include ("layout/footer/footer.php"); ?>
     
@@ -46,6 +67,7 @@
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 
+
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
@@ -55,3 +77,5 @@
 </body>
 
 </html>
+
+

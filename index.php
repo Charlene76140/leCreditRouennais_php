@@ -35,7 +35,6 @@
         <h2>Vos comptes bancaires</h2>
         <div class="row">
         <?php include ("components/homepage/acountsMake.php"); ?>
-         
         </div>
       </section>
     </main>

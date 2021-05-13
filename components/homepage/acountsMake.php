@@ -11,7 +11,7 @@ foreach(get_accounts() as $account){
               <hr>
               <p class='card-text onlyComputer'>Dernière opération : <br/> <strong>". $account["last_operation"] . "</strong></p>
               <hr>
-              <a class='btn colorButton' href='#' role='button'>Accedez au compte</a>
+              <a class='btn colorButton' href='voirCompte.php?owner=".$account["owner"]."&amp;name=".$account["name"]."&amp;number=".$account["number"]."&amp;amount=".$account["amount"]."&amp;last_operation=".$account["last_operation"]."' role='button'>Accedez au compte</a>
           </div>
           </div>
         </article>";

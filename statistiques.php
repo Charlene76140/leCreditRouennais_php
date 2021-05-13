@@ -32,14 +32,17 @@
 
   <main>
     <section class="container my-5">
-      <h2 class="sizeH2">Les Statistiques</h2>
+      <h2>Les Statistiques</h2>
       <table>
-        <tr>
-            <th>Indicateur</th>
-            <th>Valeur</th>
-            <th>Variation</th>
-        </tr>
+        <thead>
+          <tr>
+              <th>Indicateur</th>
+              <th>Valeur</th>
+              <th>Variation</th>
+          </tr>
+        <tbody>  
          <?php include ("components/stats/statistiquesMake.php") ?>
+        </tbody> 
       </table>
     </section>
   </main>
