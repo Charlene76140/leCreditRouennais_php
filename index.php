@@ -27,13 +27,14 @@
 </head>
 
 <body>
-    
+  <!-- The header and the footer are loaded from the header.php and footer.php files -->
   <?php include ("layout/header/header.php"); ?>
 
     <main>
       <section class="container my-5">
         <h2>Vos comptes bancaires</h2>
         <div class="row">
+        <!-- main content is loaded from acountsMake.php file -->
         <?php include ("components/homepage/acountsMake.php"); ?>
         </div>
       </section>

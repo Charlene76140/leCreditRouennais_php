@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    
+  <!-- The header and the footer are loaded from the header.php and footer.php files -->
   <?php include ("layout/header/header.php"); ?>
 
   <main>
@@ -36,7 +36,7 @@
       
     </section>
   </main>
-
+  
   <?php include ("layout/footer/footer.php"); ?>
     
   <script src="https://kit.fontawesome.com/6e3dce75fc.js" crossorigin="anonymous"></script>

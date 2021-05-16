@@ -27,12 +27,13 @@
 </head>
 
 <body>
-    
+  <!-- The header and the footer are loaded from the header.php and footer.php files -->
   <?php include ("layout/header/header.php"); ?>
-
+  
   <main>
     <section class="container my-5">
       <h2>Les Statistiques</h2>
+      <!-- I created the structure of the table and the data is imported from the statistiquesMake.php file -->
       <table>
         <thead>
           <tr>

@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    
+  <!-- The header and the footer are loaded from the header.php and footer.php files -->
   <?php include ("layout/header/header.php"); ?>
 
   <main>

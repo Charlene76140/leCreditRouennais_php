@@ -1,4 +1,5 @@
 <?php
+// function that returns an associative array of data for the home page
 function get_accounts() {
   return [
     [

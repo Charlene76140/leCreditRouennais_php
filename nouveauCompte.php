@@ -27,14 +27,15 @@
 </head>
 
 <body>
-    
+  <!-- The header and the footer are loaded from the header.php and footer.php files -->
   <?php include ("layout/header/header.php"); ?>
-
+  
   <main>
     <div class="row">
       <section class="container my-5 col-12 col-lg-6 sizeSection">
         <div class="text-center">
           <h2>Ouvrir un compte</h2>
+          <!-- form used to create the customer's new account -->
           <form method="post" action="nouveauCompte.php">
             <p>
               <label for="lastname" class="form-label">Nom : </label><br />
@@ -56,23 +57,25 @@
               <label for="montant" class="form-label">Montant à virer sur le compte :</label><br />
               <input type="text" name="montant" id="montant" class="form-control" placeholder ="min. 50 €" required/>
             </p>
-          
             <input type="submit" value="Envoyer" class="btn colorButton"/>
           </form>
         </div>
       </section>
 
       <section class="container my-5 col-12 col-lg-6 sizeSection">
+      <!-- the new account is displayed next to the form -->
         <?php
+        // I check if the form is complete so as not to display an error message to the customer
         if(isset ($_POST['firstname']) AND isset($_POST['lastname']) AND isset($_POST['typecompte']) AND isset($_POST['montant'])){
             echo "<div>
                     <h2>Votre nouveau compte a bien été créé!</h2>
-                    <p>Résumé des informations : </p>
-                    <ul>
-                      <li>Propriétaire du compte : <strong>". $_POST['firstname'] . " " . $_POST['lastname'] . "</strong></li>
-                      <li>Type de compte : <strong>". $_POST['typecompte'] . "</strong></li>
-                      <li>Montant a virer sur le compte : <strong>". $_POST['montant'] . " € </strong></li>
-                      ";        
+                    <div>
+                      <p>Résumé des informations : </p>
+                      <ul>
+                        <li>Propriétaire du compte : <strong>". $_POST['firstname'] . " " . $_POST['lastname'] . "</strong></li>
+                        <li>Type de compte : <strong>". $_POST['typecompte'] . "</strong></li>
+                        <li>Montant a virer sur le compte : <strong>". $_POST['montant'] . " € </strong></li>
+                    </div>";        
         }
         ?>
       </section>

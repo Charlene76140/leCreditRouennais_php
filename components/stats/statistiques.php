@@ -1,5 +1,5 @@
 <?php 
-
+// function that returns an associative array of data for the satistic page
 function get_statistiques (){
   return [
     [
