@@ -27,29 +27,26 @@
 </head>
 
 <body>
-  <!-- The header and the footer are loaded from the header.php and footer.php files -->
-  <?php include ("layout/header/header.php"); ?>
-  <?php include ("data.php"); ?>
-
-
-  <?php 
-    if(isset($_POST["email"]) AND $_POST["email"] == $data["e-mail"]){
-      echo "email ok";
-    }
-    else{
-      echo "Login ou mot de passe incorrect";
-    }
-  ?>
-
-    <main>
-      <section class="container my-5">
-        <h2>Vos comptes bancaires</h2>
-        <div class="row">
-        <!-- main content is loaded from acountsMake.php file -->
-        <?php include ("components/homepage/acountsMake.php"); ?>
+  <main class="container">
+  <div class="row">
+      <section class="container my-5 col-12 col-lg-6">
+        <div class="text-center">
+          <h2>Connectez-vous</h2>
+          <form method="post" action="index.php">
+            <p>
+              <label for="exampleFormControlInput1" class="form-label">Adresse e-mail</label>
+              <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </p>
+            <p>
+            <label for="inputPassword" class="form-label">Mot de passe</label><br />
+              <input type="password" name="mdp" class="form-control" id="inputPassword">
+            </p>
+            <input type="submit" value="Envoyer" class="btn colorButton"/>
+          </form>
         </div>
       </section>
-    </main>
+    </div>
+  </main>
 
   <?php include ("layout/footer/footer.php"); ?>
     
