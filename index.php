@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if(!isset($_SESSION["user"])) {
+      header("Location:login.php");
+      exit;
+  }
+?>
+
 <!doctype html>
 <html class="no-js" lang="fr">
 
@@ -29,18 +37,7 @@
 <body>
   <!-- The header and the footer are loaded from the header.php and footer.php files -->
   <?php include ("layout/header/header.php"); ?>
-  <?php include ("data.php"); ?>
-
-
-  <?php 
-    if(isset($_POST["email"]) AND $_POST["email"] == $data["e-mail"]){
-      echo "email ok";
-    }
-    else{
-      echo "Login ou mot de passe incorrect";
-    }
-  ?>
-
+  
     <main>
       <section class="container my-5">
         <h2>Vos comptes bancaires</h2>

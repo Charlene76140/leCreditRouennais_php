@@ -1,3 +1,22 @@
+<?php
+  $user = [
+      "email" => "saintjulien@gmail.com",
+      "mdp" => "coucou"
+  ];
+  
+  if(isset($_POST["email"]) AND isset($_POST["mdp"])) {
+      if($_POST["email"] === $user["email"] AND $_POST["mdp"] === $user["mdp"]) {
+        session_start();
+        $_SESSION["user"] = $user;
+        header("Location:index.php");
+        exit;
+      }
+      else {
+        $error_message = "Mot de passe ou e-mail incorrect";
+      }
+  }
+?>
+
 <!doctype html>
 <html class="no-js" lang="fr">
 
@@ -29,26 +48,29 @@
 <body>
   <main class="container">
   <div class="row">
-      <section class="container my-5 col-12 col-lg-6">
+      <section class="container my-5 col-12 col-lg-6 bgColor">
         <div class="text-center">
           <h2>Connectez-vous</h2>
-          <form method="post" action="index.php">
+          <form method="post" action="" class="w-75 mx-auto my-5">
+            <?php if(isset($error_message)): ?>
+              <div class="alert alert-danger">
+                <?php echo $error_message; ?>
+              </div>
+            <?php endif; ?>
             <p>
               <label for="exampleFormControlInput1" class="form-label">Adresse e-mail</label>
               <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
             </p>
             <p>
             <label for="inputPassword" class="form-label">Mot de passe</label><br />
-              <input type="password" name="mdp" class="form-control" id="inputPassword">
+              <input type="password" name="mdp" class="form-control" id="inputPassword" placeholder="mot de passe">
             </p>
-            <input type="submit" value="Envoyer" class="btn colorButton"/>
+            <input type="submit" value="Envoyer" class="btn bg-light"/>
           </form>
         </div>
       </section>
     </div>
   </main>
-
-  <?php include ("layout/footer/footer.php"); ?>
     
   <script src="https://kit.fontawesome.com/6e3dce75fc.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>

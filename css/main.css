@@ -101,6 +101,7 @@ body{
 
 .bgColor, .colorButton{
   background-color: #829298;
+  color: white;
 }
 /*----------For Layer----------*/
 /* .layer{
@@ -159,7 +160,6 @@ table th{
   width: 80%;
   margin: auto;
 }
-
 /*---------Footer mobile----------*/
 .sizeIcone{
   font-size: 30px;
@@ -184,8 +184,8 @@ table th{
     font-size: 1.3em;
   }
 
-  .navbar-nav> .nav-item> .nav-link:hover{
-    color: rgba(255, 255, 255, 0.658);
+  .navbar-nav> .nav-item> .nav-link{
+    color: white;
   }
   /*----------main computer----------*/
   article{

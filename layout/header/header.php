@@ -30,6 +30,9 @@
             </li>
         </ul>
         </div>
+        <?php if(isset($_SESSION["user"])): ?>
+            <a class="btn btn-light mx-3" href="logout.php">Déconnexion</a>
+          <?php endif; ?>
     </div>
     </nav>
 </header>
