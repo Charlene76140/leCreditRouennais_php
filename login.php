@@ -46,7 +46,7 @@
 </head>
 
 <body>
-  <main class="container">
+  <main class="container my-5">
   <div class="row">
       <section class="container my-5 col-12 col-lg-6 bgColor">
         <div class="text-center">
