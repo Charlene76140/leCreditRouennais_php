@@ -9,7 +9,7 @@ include ("layout/header/header.php");
         <div class="text-center">
           <h2>Ouvrir un compte</h2>
           <!-- form used to create the customer's new account -->
-          <form method="post" action="nouveauCompte.php">
+          <form method="post" action="nouveauCompte.php" class="my-4">
             <p>
               <label for="lastname" class="form-label">Nom : </label><br />
               <input type="text" name="lastname" id="lastname" class="form-control" placeholder ="ex : Dupont..." required/>
@@ -39,7 +39,7 @@ include ("layout/header/header.php");
       <!-- the new account is displayed next to the form -->
         <?php
         // I check if the form is complete so as not to display an error message to the customer
-        if(isset ($_POST['firstname']) AND isset($_POST['lastname']) AND isset($_POST['typecompte']) AND isset($_POST['montant'])){
+        if(isset($_POST['firstname']) AND isset($_POST['lastname']) AND isset($_POST['typecompte']) AND isset($_POST['montant'])){
             echo "<div>
                     <h2>Votre nouveau compte a bien été créé!</h2>
                     <div>

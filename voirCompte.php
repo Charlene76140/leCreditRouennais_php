@@ -17,7 +17,8 @@ else{
   <section class="container my-5">
   <?php if (isset($account)) :?>
       <h2>Type de compte : </h2>
-        <table>
+      <div class="row">
+        <table class="col-10 col-md-9 col-lg-7 my-4">
           <thead>
             <tr>
               <th><?php echo $account['name']; ?></th>
@@ -38,6 +39,7 @@ else{
               </tr> 
           </tbody>
         </table>
+      </div>
     <?php else : ?>
       <div class="alert alert-secondary text-center" role="alert">
         <?php echo $error_message; ?> <br />

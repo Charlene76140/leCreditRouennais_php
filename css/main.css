@@ -144,7 +144,7 @@ section h2{
 table{
   border-collapse: collapse;
   width: 95%;
-  margin: 2%;
+  margin: auto;
   text-align: center;
 }
 
@@ -155,7 +155,7 @@ td, th {
 }
 
 table th{
-  height: 5vh;
+  min-height: 5vh;
   background-color:#829298;
   color: white;
 }
@@ -176,13 +176,6 @@ footer{
 .sizeCopyRight{
   font-size: 0.8em;
 }
-/*--------------------------------IPAD version------------------------------------ */
-@media screen and (min-width : 576px){
-
-
-}  
-
-
 
 /*--------------------------------computer version--------------------------------- */
 @media screen and (min-width : 768px){
@@ -208,7 +201,7 @@ footer{
   }
 
   section h2{
-    margin: 4% 4%;
+    margin: 2% 2%;
   }
   
   hr{
