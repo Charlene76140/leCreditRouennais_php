@@ -63,11 +63,12 @@ VALUES
 
 INSERT INTO operation (type_of_operation, label, operation_date, amount, account_id)
 VALUES
-('Debit', 'Amazon commande', '2021-05-19', 42.62 , 1),
+('Debit', 'Amazon commande', '2021-05-19', -42.62 , 1),
+('Debit', 'Boulangerie Rouen Centre', '2021-05-19', -3.54 , 1),
 ('Credit', 'epargne programmé','2021-05-05', 150, 2),
 ('Credit', 'epargne programmé','2021-05-05', 75, 3),
-('Debit', 'Carrefour Rouen', '2021-05-14', 152.28, 4),
-('Debit', 'métropole eau', '2021-05-6', 35, 4)
+('Debit', 'Carrefour Rouen', '2021-05-14', -152.28, 4),
+('Debit', 'métropole eau', '2021-05-6', -35, 4)
 ;
 
  
