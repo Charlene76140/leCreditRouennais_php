@@ -3,17 +3,14 @@ session_start();
 include ("layout/header/header.php"); 
 require ("model/accountModel.php");
 
-
-
 if(isset($_GET["id"]) AND !empty($_GET["id"])){
-  $details = getDetails($db, $_GET["id"]);
+  $details = getDetailsAccount($db, $_GET["id"]);
   $operations = getOperation($db, $_GET["id"]);
 }
 else{
   header("Location:index.php");
 }
 ?>
-
 
 <main>
   <section class="container my-5">

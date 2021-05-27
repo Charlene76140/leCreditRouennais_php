@@ -1,21 +1,22 @@
 <?php
-  $user = [
-      "email" => "saintjulien@gmail.com",
-      "mdp" => "coucou"
-  ];
+  require "model/userModel.php";
+  require "model/connexion.php";
   
-  if(isset($_POST["email"]) AND isset($_POST["mdp"])) {
-      if($_POST["email"] === $user["email"] AND $_POST["mdp"] === $user["mdp"]) {
+  if(isset($_POST["email"]) AND isset($_POST["user_password"])) {
+    $customer = getCustomerByEmail($db, $_POST["email"]);
+    if($customer){
+      if(password_verify($_POST["user_password"], $customer["user_password"])){
         session_start();
-        $_SESSION["user"] = $user;
+        $_SESSION["user"] = $customer;
+        var_dump($_SESSION["user"]);
         header("Location:index.php");
         exit;
       }
-      else {
-        $error_message = "Mot de passe ou e-mail incorrect";
-      }
+    }
+    $error_message = "Mot de passe ou e-mail incorrect";
   }
 ?>
+
 
 <!doctype html>
 <html class="no-js" lang="fr">
@@ -47,7 +48,7 @@
 
 <body>
   <main class="container my-5">
-  <div class="row">
+    <div class="row">
       <section class="container my-5 col-12 col-lg-6 bgColor">
         <div class="text-center">
           <h2>Connectez-vous</h2>
@@ -58,12 +59,12 @@
               </div>
             <?php endif; ?>
             <p>
-              <label for="exampleFormControlInput1" class="form-label">Adresse e-mail</label>
-              <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              <label for="email" class="form-label">Adresse e-mail</label>
+              <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
             </p>
             <p>
-            <label for="inputPassword" class="form-label">Mot de passe</label><br />
-              <input type="password" name="mdp" class="form-control" id="inputPassword" placeholder="mot de passe">
+            <label for="user_password" class="form-label">Mot de passe</label><br />
+              <input type="password" name="user_password" class="form-control" id="user_password" placeholder="mot de passe">
             </p>
             <input type="submit" value="Envoyer" class="btn bg-light"/>
           </form>
@@ -72,20 +73,4 @@
     </div>
   </main>
     
-  <script src="https://kit.fontawesome.com/6e3dce75fc.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
-</body>
-
-</html>
+<?php include "layout/footer/footer.php"?> 

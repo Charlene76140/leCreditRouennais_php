@@ -47,8 +47,8 @@ ENGINE=InnoDB;
 
 INSERT INTO customer (email,user_password, firstname, lastname,street_number,street_address, area_code, city)
  VALUES
-('charly@hotmail.fr', 'charlyCoco', 'Charly', 'Corint', '25 bis','rue des accacias','76100','Rouen'),
-('martine.dupont@gmail.com', 'Martine76*', 'Martine', 'Dupont', '475','avenue Victor Hugo, apt 5','76230','Bois-Guillaume')
+('charly@hotmail.fr', 'charly76', 'Charly', 'Corint', '25 bis','rue des accacias','76100','Rouen'),
+('martine.dupont@gmail.com', 'martine76', 'Martine', 'Dupont', '475','avenue Victor Hugo, apt 5','76230','Bois-Guillaume')
 ;
  
 
