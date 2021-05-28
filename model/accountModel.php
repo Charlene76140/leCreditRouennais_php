@@ -35,7 +35,7 @@
         return $result;
     }
 
-    
+    //fonction utilisée pour faire un débit/crédit sur la page depot_retrait.php
     function modifyAccount(PDO $db, array $updateAccount){
         if($updateAccount["type_of_operation"] === "Debit"){
             $query = $db->prepare("UPDATE account SET account_amount=(account_amount - :account_amount) WHERE  id=:id");
