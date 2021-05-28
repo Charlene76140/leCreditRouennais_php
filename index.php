@@ -10,7 +10,6 @@
   require "model/userModel.php";
 
   $accounts = getAccount($db, $_SESSION["user"]["id"]);
-  var_dump($accounts);
   
 ?>
   <main>

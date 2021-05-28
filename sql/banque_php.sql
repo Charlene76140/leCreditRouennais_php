@@ -9,7 +9,7 @@ GRANT ALL PRIVILEGES ON banque_php.* TO 'banquePHP'@'localhost';
 CREATE TABLE customer (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     email VARCHAR(50) NOT NULL,
-    user_password VARCHAR(50) NOT NULL,
+    user_password VARCHAR(255) NOT NULL,
     firstname VARCHAR(100) NOT NULL,
     lastname VARCHAR(100) NOT NULL,
     street_number VARCHAR(10) NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE account (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     account_type VARCHAR(50) NOT NULL,
     account_number VARCHAR(50) NOT NULL,
-    amount DECIMAL(10,2) NOT NULL,
+    account_amount DECIMAL(10,2) NOT NULL,
     account_fees DECIMAL(10,2) NOT NULL,
     creation_date DATE NOT NULL,
     customer_id INT UNSIGNED NOT NULL,
@@ -47,8 +47,8 @@ ENGINE=InnoDB;
 
 INSERT INTO customer (email,user_password, firstname, lastname,street_number,street_address, area_code, city)
  VALUES
-('charly@hotmail.fr', 'charly76', 'Charly', 'Corint', '25 bis','rue des accacias','76100','Rouen'),
-('martine.dupont@gmail.com', 'martine76', 'Martine', 'Dupont', '475','avenue Victor Hugo, apt 5','76230','Bois-Guillaume')
+('charly@hotmail.fr', '$2y$10$qcyYy2NS48Oku2B8Pet6uuuw2XL0JceKo17wyBTb8LkF3ijkLOuYG', 'Charly', 'Corint', '25 bis','rue des accacias','76100','Rouen'),
+('martine.dupont@gmail.com', '$2y$10$E7H.qP7qEIodPi2KiyKFrOKoz1SoBJYlGv29T/3emLVhoXBPDe00K', 'Martine', 'Dupont', '475','avenue Victor Hugo, apt 5','76230','Bois-Guillaume')
 ;
  
 

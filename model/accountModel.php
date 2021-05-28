@@ -13,7 +13,7 @@
     function getAccountDetail(PDO $db, int $id){
         $query = $db->prepare(
             "SELECT * FROM account AS a
-            INNER JOIN operation AS o
+            LEFT JOIN operation AS o
             ON o.account_id = a.id
             WHERE a.id = :id"
         );
@@ -37,10 +37,12 @@
 
     
     function modifyAccount(PDO $db, array $updateAccount){
-        if($updateAccount["type_of_operation"] == "Debit"){
+        if($updateAccount["type_of_operation"] === "Debit"){
             $query = $db->prepare("UPDATE account SET account_amount=(account_amount - :account_amount) WHERE  id=:id");
         }
-        $query = $db->prepare("UPDATE account SET account_amount=(account_amount + :account_amount) WHERE  id=:id");
+        else{
+            $query = $db->prepare("UPDATE account SET account_amount=(account_amount + :account_amount) WHERE  id=:id");
+        }    
         $result = $query->execute([
             "account_amount" => $updateAccount["account_amount"],
             "id" => $updateAccount["id"]

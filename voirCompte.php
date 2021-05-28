@@ -14,7 +14,7 @@ else{
 
 <main>
   <section class="container my-5">
-  <?php if (isset($accounts)) :?>
+  
       <h2>Type de compte : </h2>
       <div class="row">
         <table class="col-10 col-md-9 col-lg-7 my-4">
@@ -47,7 +47,7 @@ else{
           </tbody>
         </table>
       </div>
-    <?php endif; ?>
+    
   </section>
 </main>
 
