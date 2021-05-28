@@ -50,7 +50,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="nouveauCompte.php">Ouvrir un compte</a></li>
-                        <li><a class="dropdown-item" href="virement.php">Faire un virement</a></li>
+                        <li><a class="dropdown-item" href="depot_retrait.php">Dépot/retrait</a></li>
                         <li><a class="dropdown-item" href="gestionComptes.php">Gérer mes comptes</a></li>
                     </ul>
                     </li>

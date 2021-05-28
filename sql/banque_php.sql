@@ -52,7 +52,7 @@ INSERT INTO customer (email,user_password, firstname, lastname,street_number,str
 ;
  
 
-INSERT INTO account (account_type, account_number, amount, account_fees, creation_date, customer_id)
+INSERT INTO account (account_type, account_number, account_amount, account_fees, creation_date, customer_id)
 VALUES
 ('Compte courant', 'FR7548451512 C50', 548.50 , 35, '2018-10-05', 1),
 ('Livret A', 'FR451841 C51', 1985.46 , 19.90, '2018-10-05', 1),
