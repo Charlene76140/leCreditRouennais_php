@@ -86,22 +86,6 @@ textarea {
    Author's custom styles
    ========================================================================== */
 /*----------------------------general rules------------------------------ */
-*{
-  margin: 0;
-  padding: 0;
-}  
-
-body{
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: 'Raleway', sans-serif;
-}
-
-.bgColor, .colorButton{
-  background-color: #829298;
-}
 /*----------For Layer----------*/
 /* .layer{
   height: 100vh;
@@ -125,6 +109,24 @@ body{
   width: 70%;
   margin: auto;
 } */
+
+*{
+  margin: 0;
+  padding: 0;
+}  
+
+body{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Raleway', sans-serif;
+}
+
+.bgColor, .colorButton{
+  background-color: #829298;
+  color: white;
+}
 /*------------------------------mobile version-----------------------------------*/
 /*----------Header mobile---------*/
 .onlyComputer{
@@ -142,25 +144,31 @@ section h2{
 table{
   border-collapse: collapse;
   width: 95%;
-  margin: 2%;
+  margin: auto;
   text-align: center;
 }
 
 td, th {
   border: 1px solid black;
+  font-size: 0.9em;
+  padding: 2%;
 }
 
 table th{
-  height: 5vh;
+  min-height: 5vh;
   background-color:#829298;
+  color: white;
 }
 
 .sizeSection{
   width: 80%;
   margin: auto;
 }
-
 /*---------Footer mobile----------*/
+footer{
+  font-size: 0.8em;
+}
+
 .sizeIcone{
   font-size: 30px;
 }
@@ -184,8 +192,8 @@ table th{
     font-size: 1.3em;
   }
 
-  .navbar-nav> .nav-item> .nav-link:hover{
-    color: rgba(255, 255, 255, 0.658);
+  .navbar-nav> .nav-item> .nav-link{
+    color: white;
   }
   /*----------main computer----------*/
   article{
@@ -193,7 +201,7 @@ table th{
   }
 
   section h2{
-    margin: 4% 4%;
+    margin: 2% 2%;
   }
   
   hr{
@@ -205,7 +213,7 @@ table th{
   table{
     border-collapse: collapse;
     width: 60%;
-    margin: 5% 15%;
+    margin: auto;
     text-align: center;
     height: 40vh;
     font-size: 1.3em;
@@ -218,6 +226,7 @@ table th{
   table th{
     height: 5vh;
     background-color:#829298;
+    color: white;
   }
 
   .sizeSection{
