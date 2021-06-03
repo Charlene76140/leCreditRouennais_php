@@ -10,15 +10,17 @@
     }
 
     //fonction utilisée pour récupérer les comptes en fonctions de l'ID du customer, et jointures sur les opérations du compte sur la page voirCompte.php
-    function getAccountDetail(PDO $db, int $id){
+    function getAccountDetail(PDO $db, int $id, int $userId){
         $query = $db->prepare(
             "SELECT * FROM account AS a
             LEFT JOIN operation AS o
             ON o.account_id = a.id
-            WHERE a.id = :id"
+            WHERE a.id = :id
+            AND customer_id=:userId"
         );
         $query -> execute([
-            "id" => $id
+            "id" => $id,
+            "userId"=> $userId
         ]);
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
         return $result;
