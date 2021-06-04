@@ -16,9 +16,9 @@ include "layout/header/header.php";
         <tbody>  
           <?php foreach($stats as $stat) :?>
           <tr>
-            <td class='indicateurs'><?php echo $stat["Indicateur"] ?></td>
-            <td class='value'><?php echo $stat["Valeur"] ?></td>
-            <td class='variation'><?php echo $stat["Variation"] ?></td>
+            <td class='indicateurs'><?php echo htmlspecialchars($stat["Indicateur"]) ?></td>
+            <td class='value'><?php echo htmlspecialchars($stat["Valeur"]) ?></td>
+            <td class='variation'><?php echo htmlspecialchars($stat["Variation"]) ?></td>
           </tr>
           <?php endforeach ?>
         </tbody> 

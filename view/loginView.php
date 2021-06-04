@@ -9,7 +9,7 @@
           <form method="post" action="" class="w-75 mx-auto my-5">
             <?php if(isset($error_message)): ?>
               <div class="alert alert-danger">
-                <?php echo $error_message; ?>
+                <?php echo htmlspecialchars($error_message); ?>
               </div>
             <?php endif; ?>
             <p>

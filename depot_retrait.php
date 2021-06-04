@@ -8,12 +8,31 @@ require "model/connexion.php";
 $accounts = getAccount($db, $_SESSION["user"]["id"]);
 
 if(!empty($_POST)){
-  if(!modifyAccount($db, $_POST)){
+  $account = getAccountDetail($db, $_POST["id"], $_SESSION["user"]["id"]);
+  $singleAccount= $account[0];
+
+}
+
+if(!empty($_POST)){
+  if($singleAccount) {
+    // Update the amount of the account according to the type of operation
+    if($_POST["type_of_operation"] === "Debit") {
+      $singleAccount["account_amount"] = floatval($singleAccount["account_amount"]) - floatval($_POST["account_amount"]);
+      $_POST["account_amount"] = "-" . $_POST["account_amount"];
+    }
+    else {
+      $singleAccount["account_amount"] = floatval($singleAccount["account_amount"]) + floatval($_POST["account_amount"]);
+      var_dump($singleAccount);
+    }
+  }
+
+  if(!modifyAccount($db, $singleAccount)){
     echo "L'enregistrement a échoué";
   }
   elseif(!addOperation($db, $_POST)){
     echo "L'enregistrement a échoué";
   }
+
   else{
     header("Location: index.php");
     exit();

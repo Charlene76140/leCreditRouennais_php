@@ -9,27 +9,27 @@
             <table class="col-10 col-md-9 col-lg-7 my-4">
                 <thead>
                     <tr>
-                        <th><?php echo $accounts[0]['account_type']; ?></th>
+                        <th><?php echo htmlspecialchars($accounts[0]['account_type']); ?></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>N° de compte : <?php echo $accounts[0]['account_number']; ?></td>
+                        <td>N° de compte : <?php echo htmlspecialchars($accounts[0]['account_number']); ?></td>
                     </tr> 
                     <tr>
-                        <td>Solde : <?php echo $accounts[0]['account_amount'] .' €' ?></td>
+                        <td>Solde : <?php echo htmlspecialchars($accounts[0]['account_amount']) .' €' ?></td>
                     </tr> 
                     <tr>
-                        <td>Date création : <?php echo $accounts[0]['creation_date']?></td>
+                        <td>Date création : <?php echo htmlspecialchars($accounts[0]['creation_date'])?></td>
                     </tr>
                     <tr>
-                        <td>Frais de compte : <?php echo $accounts[0]['account_fees'] . ' €/an'?></td>
+                        <td>Frais de compte : <?php echo htmlspecialchars($accounts[0]['account_fees']) . ' €/an'?></td>
                     </tr>
                     <tr>
                         <td>
                         <p>Dernière(s) opération(s) : </p>
                         <?php foreach ($accounts as $account)  : ?>
-                            <p><?php echo $account['amount'] . ' €'; ?> : <?php echo $account['label']; ?></p>
+                            <p><?php echo htmlspecialchars($account['amount']) . ' €'; ?> : <?php echo htmlspecialchars($account['label']); ?></p>
                         <?php endforeach; ?>  
                         </td>
                     </tr> 

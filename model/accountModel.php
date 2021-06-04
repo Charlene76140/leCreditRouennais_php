@@ -28,7 +28,10 @@
 
     //fonction utilisée pour ajouter un nouveau compte sur la page nouveauCompte.php
     function addNewAccount(PDO $db, array $account):bool {
-        $query= $db->prepare("INSERT INTO account(account_type,account_number,account_amount, account_fees, creation_date, customer_id) VALUES(:account_type, 'FR457121 C741',  :account_amount, 19.90, NOW(), :customer_id)");
+        $query= $db->prepare("INSERT INTO account(account_type,account_number,account_amount, account_fees, creation_date, customer_id) 
+        VALUES(:account_type, 'FR457121 C741',  :account_amount, 19.90, NOW(), :customer_id)"
+        );
+
         $result = $query->execute([
             "account_type" => $account["account_type"],
             "account_amount"=> $account["account_amount"],
@@ -36,18 +39,31 @@
         ]);
         return $result;
     }
-
+   
     //fonction utilisée pour faire un débit/crédit sur la page depot_retrait.php
+    // function modifyAccount(PDO $db, array $updateAccount){
+    //     if($updateAccount["type_of_operation"] === "Debit"){
+    //         $query = $db->prepare("UPDATE account SET account_amount=(account_amount - :account_amount) WHERE  id=:id");
+    //     }
+    //     else{
+    //         $query = $db->prepare("UPDATE account SET account_amount=(account_amount + :account_amount) WHERE  id=:id");
+    //     }    
+    //     $result = $query->execute([
+    //         "account_amount" => $updateAccount["account_amount"],
+    //         "id" => $updateAccount["id"]
+    //     ]);
+    //     return $result;
+    // }
+
     function modifyAccount(PDO $db, array $updateAccount){
-        if($updateAccount["type_of_operation"] === "Debit"){
-            $query = $db->prepare("UPDATE account SET account_amount=(account_amount - :account_amount) WHERE  id=:id");
-        }
-        else{
-            $query = $db->prepare("UPDATE account SET account_amount=(account_amount + :account_amount) WHERE  id=:id");
-        }    
+        $query = $db->prepare(
+            "UPDATE account SET account_amount=:account_amount 
+            WHERE  id=:id"
+        );
+
         $result = $query->execute([
             "account_amount" => $updateAccount["account_amount"],
-            "id" => $updateAccount["id"]
+            "id" => $updateAccount["account_id"]
         ]);
         return $result;
     }
