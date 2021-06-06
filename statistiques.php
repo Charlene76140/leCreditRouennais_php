@@ -1,8 +1,11 @@
 <?php 
 session_start();
-require "model/statistiques.php";
-$stats = get_statistiques();
-
+if(!isset($_SESSION["user"])) {
+  header("Location:login.php");
+  exit;
+}
 
 require "view/statistiquesView.php";
 ?>
+
+
