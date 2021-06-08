@@ -1,13 +1,20 @@
 <?php
-  require "model/userModel.php";
-  require "model/connexion.php";
-  
+  require "model/entity/Customer.php";
+  require "model/customerModel.php";
+  // require "model/connexion.php";
+
+  $customerModel = new CustomerModel();
+
+
   if(isset($_POST["email"]) AND isset($_POST["user_password"])) {
-    $customer = getCustomerByEmail($db, $_POST["email"]);
-    if($customer){
-      if(password_verify($_POST["user_password"], $customer["user_password"])){
+    //enlevé ligne 10
+    $customer = new Customer($_POST);
+    $customerbdd = $customerModel->getCustomerByEmail($customer);
+
+    if($customerbdd){
+      if(password_verify($_POST["user_password"], $customerbdd->getUser_Password())){
         session_start();
-        $_SESSION["user"] = $customer;
+        $_SESSION["user"] = $customerbdd;
         var_dump($_SESSION["user"]);
         header("Location:index.php");
         exit;
@@ -18,3 +25,4 @@
 
   require "view/loginView.php";
 ?>
+ 

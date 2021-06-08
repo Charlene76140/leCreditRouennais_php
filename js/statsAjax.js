@@ -28,5 +28,5 @@ httpRequest.onreadystatechange = function() {
     }
 };
     
-httpRequest.open('GET', 'model/statistiques.json', true);
+httpRequest.open('GET', 'statistiques.json', true);
 httpRequest.send();
