@@ -2,10 +2,10 @@
 class CustomerModel {
   private PDO $db;
 
-  function getCustomerByEmail(Customer $customer){
+  function getCustomerByEmail(array $data){
     $query = $this->db->prepare("SELECT * FROM customer WHERE email=:email");
     $query->execute([
-      "email"=> $customer->getEmail()
+      "email"=> $data["email"]
     ]);
     $result = $query->fetch(PDO::FETCH_ASSOC);
     $result = new Customer($result);
