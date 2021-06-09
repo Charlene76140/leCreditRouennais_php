@@ -6,5 +6,5 @@ if(!isset($_SESSION["user"])) {
 }
 
 
-require "view/gestionCompteView.php";
+require "view/supprimerCompteView.php";
 ?>

@@ -59,5 +59,37 @@
         public function getLastname() {
             return $this->lastname;
         }
+
+        public function setStreet_number(string $street_number) {
+            $this->street_number = $street_number;
+        }
+
+        public function getStreet_number() {
+            return $this->street_number;
+        }
+
+        public function setStreet_adress(string $street_adress) {
+            $this->street_adress = $street_adress;
+        }
+
+        public function getStreet_adress() {
+            return $this->street_adress;
+        }
+
+        public function setArea_code(string $area_code) {
+            $this->area_code = $area_code;
+        }
+
+        public function getArea_code() {
+            return $this->area_code;
+        }
+
+        public function setCity(string $city) {
+            $this->city = $city;
+        }
+
+        public function getCity() {
+            return $this->city;
+        }
     }
 ?>

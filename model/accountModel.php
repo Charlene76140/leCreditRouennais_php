@@ -1,11 +1,9 @@
 <?php
-
 class AccountModel{
-
     private PDO $db;
 
     //function pour récupérer tous les comptes en fonction de l'ID, sur la page index.php
-    function getAccount(int $id){
+    public function getAccount(int $id){
         $query = $this->db->prepare("SELECT * FROM account WHERE customer_id=:id");
         $query->execute([
         "id" => $id
@@ -14,6 +12,17 @@ class AccountModel{
         foreach($result as $key=>$account){
             $result[$key] = new Account($account);
         }
+        return $result;
+    }
+
+    public function getSingleAccount(int $id, int $customer_id){
+        $query = $this->db->prepare("SELECT * FROM account WHERE id=:id AND customer_id=:customer_id");
+        $query->execute([
+        "id" => $id,
+        "customer_id"=> $customer_id
+        ]);
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+        $result = new Account($result);
         return $result;
     }
 

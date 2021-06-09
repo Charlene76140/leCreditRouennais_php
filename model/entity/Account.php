@@ -4,6 +4,8 @@
         protected string $account_type;
         protected string $account_number;
         protected int $account_amount;
+        protected int $account_fees;
+        protected $creation_date;
         protected int $customer_id;
 
         public function __construct(?array $data=null){
@@ -22,7 +24,7 @@
         }
 
         public function getId(){
-            return $this->id;
+            return htmlspecialchars($this->id);
         }
 
         public function setAccount_type(string $account_type){
@@ -30,7 +32,7 @@
         }
 
         public function getAccount_type(){
-            return $this->account_type;
+            return htmlspecialchars($this->account_type);
         }
 
         public function setAccount_number(string $account_number){
@@ -38,7 +40,7 @@
         }
 
         public function getAccount_number(){
-            return $this->account_number;
+            return htmlspecialchars($this->account_number);
         }
 
         public function setAccount_amount(string $account_amount){
@@ -46,7 +48,23 @@
         }
 
         public function getAccount_amount(){
-            return $this->account_amount;
+            return htmlspecialchars($this->account_amount);
+        }
+
+        public function setAccount_fees(string $account_fees){
+            $this->account_fees= $account_fees;
+        }
+
+        public function getAccount_fees(){
+            return htmlspecialchars($this->account_fees);
+        }
+
+        public function setCreation_date(string $creation_date){
+            $this->creation_date= $creation_date;
+        }
+
+        public function getCreation_date(){
+            return htmlspecialchars($this->creation_date);
         }
 
         public function setCustomer_id(string $customer_id){
@@ -54,7 +72,7 @@
         }
 
         public function getCustomer_id(){
-            return $this->customer_id;
+            return htmlspecialchars($this->customer_id);
         }
 
     }

@@ -6,7 +6,7 @@
 
 
   if(isset($_POST["email"]) AND isset($_POST["user_password"])) {
-    // customerbdd est une tableau d'objet de la class Customer
+    // customerbdd est objet de la class Customer
     $customerbdd = $customerModel->getCustomerByEmail($_POST);
 
     if($customerbdd){
