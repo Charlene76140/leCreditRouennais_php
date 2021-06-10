@@ -16,7 +16,7 @@ include "layout/header/header.php";
               <label for="account_type" class="form-label">Type de compte : </label><br />
               <select name="account_type" id="account_type" class="form-select">
                   <option value="Compte courant">Compte courant</option>
-                  <option value="Epargne">Epargne</option>
+                  <option value="Livret A">Livret A</option>
                   <option value="PEL">PEL</option>
               </select>
             </p>

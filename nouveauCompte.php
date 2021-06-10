@@ -18,7 +18,7 @@ $user = $_SESSION["user"];
 // var_dump($user);
 
 if(!empty($_POST)){
-  if($_POST["account_amount"] > 50){
+  if($_POST["account_amount"] >= 50){
     if(!$accountModel->addNewAccount($account, $user->getId())){
       $error_bdd= "L'enregistrement a échoué";
     }

@@ -12,7 +12,6 @@
 
   $accountModel = new AccountModel();
   $user = $_SESSION["user"];
-  var_dump($user);
   $accounts= $accountModel->getAccount($user->getId());
  
   require "view/indexView.php";

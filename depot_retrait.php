@@ -1,9 +1,12 @@
 <?php 
 
 require "model/connexionModel.php";
+require "model/entity/Account.php";
 require "model/accountModel.php";
+require "model/entity/Operation.php";
 require "model/operationModel.php";
-require "model/connexion.php";
+require "model/entity/Customer.php";
+
 
 session_start();
 if(!isset($_SESSION["user"])) {
@@ -11,39 +14,49 @@ if(!isset($_SESSION["user"])) {
   exit;
 }
 
-$accounts = getAccount($db, $_SESSION["user"]["id"]);
+$accountModel = new AccountModel();
+$operationModel = new OperationModel();
+$operation = new Operation($_POST);
+$user = $_SESSION["user"];
+$accounts= $accountModel->getAccount($user->getId());
+
 
 if(!empty($_POST)){
-  $account = getAccountDetail($db, $_POST["id"], $_SESSION["user"]["id"]);
-  $singleAccount= $account[0];
-
+  $account = $accountModel->getSingleAccount($_POST["id"], $user->getId());
 }
 
+
 if(!empty($_POST)){
-  if($singleAccount) {
+  if($account) {
+    $amount = floatval($account->getAccount_amount());
+    $postamount = floatval($_POST["account_amount"]);
     // Update the amount of the account according to the type of operation
     if($_POST["type_of_operation"] === "Debit") {
-      $singleAccount["account_amount"] = floatval($singleAccount["account_amount"]) - floatval($_POST["account_amount"]);
+      $total = $amount - $postamount;
+      // var_dump($total);
       $_POST["account_amount"] = "-" . $_POST["account_amount"];
     }
     else {
-      $singleAccount["account_amount"] = floatval($singleAccount["account_amount"]) + floatval($_POST["account_amount"]);
-      var_dump($singleAccount);
+      $total= $amount + $postamount;
+      var_dump($total);
     }
   }
 
-  if(!modifyAccount($db, $singleAccount)){
+  if(!$accountModel->modifyAccount($total , $user->getId())){
     echo "L'enregistrement a échoué";
   }
-  elseif(!addOperation($db, $_POST)){
+  elseif(!$operationModel->addOperation($operation, $total, $account->getId())){
     echo "L'enregistrement a échoué";
   }
-
   else{
     header("Location: index.php");
     exit();
   }
 }
+
+
+
+
 
 require "view/depot_retraitView.php";
 

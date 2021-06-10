@@ -20,12 +20,12 @@ include "layout/header/header.php";
               <label for="id" class="form-label">Choix du compte : </label><br />
               <select name="id" id="id" class="form-select">
                 <?php foreach ($accounts as $account) : ?>
-                <option value="<?php echo htmlspecialchars($account["id"]) ?>"><?php echo htmlspecialchars($account["account_type"]) ?></option>
+                <option value="<?php echo $account->getId() ?>"><?php echo $account->getAccount_type() ?></option>
                 <?php endforeach; ?>
               </select>
             </p>
             <p>
-              <label for="account_amount" class="form-label">Montant désirer :</label><br />
+              <label for="account_amount" class="form-label">Montant désiré :</label><br />
               <input type="text" name="account_amount" id="account_amount" class="form-control" placeholder ="exemple : 50€" required/>
             </p>
             <input type="submit" value="Envoyer" class="btn colorButton"/>

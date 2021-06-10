@@ -45,7 +45,7 @@ class AccountModel{
     // }
 
     //fonction utilisée pour ajouter un nouveau compte sur la page nouveauCompte.php
-    function addNewAccount(Account $account, int $id):bool {
+    public function addNewAccount(Account $account, int $id):bool {
         $query= $this->db->prepare("INSERT INTO account(account_type,account_number,account_amount, account_fees, creation_date, customer_id) 
         VALUES(:account_type, 'FR457121 C741',  :account_amount, 19.90, NOW(), :customer_id)"
         );
@@ -57,18 +57,18 @@ class AccountModel{
         return $result;
     }
 
-    // function modifyAccount(PDO $db, array $updateAccount){
-    //     $query = $db->prepare(
-    //         "UPDATE account SET account_amount=:account_amount 
-    //         WHERE  id=:id"
-    //     );
+    public function modifyAccount(float $amount, int $id) : bool{
+        $query = $this->db->prepare(
+            "UPDATE account SET account_amount=:account_amount 
+            WHERE  id=:id"
+        );
 
-    //     $result = $query->execute([
-    //         "account_amount" => $updateAccount["account_amount"],
-    //         "id" => $updateAccount["account_id"]
-    //     ]);
-    //     return $result;
-    // }
+        $result = $query->execute([
+            "account_amount" => $amount,
+            "id" => $id
+        ]);
+        return $result;
+    }
 
     public function __construct(){
         // l'objet est automatiquement connecté à la BDD

@@ -3,7 +3,7 @@
         protected int $id;
         protected string $account_type;
         protected string $account_number;
-        protected int $account_amount;
+        protected float $account_amount;
         protected int $account_fees;
         protected $creation_date;
         protected int $customer_id;
@@ -43,7 +43,7 @@
             return htmlspecialchars($this->account_number);
         }
 
-        public function setAccount_amount(string $account_amount){
+        public function setAccount_amount(float $account_amount){
             $this->account_amount= $account_amount;
         }
 
