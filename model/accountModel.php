@@ -70,6 +70,17 @@ class AccountModel{
         return $result;
     }
 
+    public function deleteAccount(int $id, int $customer_id){
+        $query= $this->db->prepare(
+            "DELETE FROM account WHERE id=:id AND customer_id= :customer_id"
+        );
+        $result = $query->execute([
+            "id"=>$id,
+            "customer_id" => $customer_id
+        ]);
+        return $result; 
+    }
+
     public function __construct(){
         // l'objet est automatiquement connecté à la BDD
         $this->db = ConnexionModel::getDB();
