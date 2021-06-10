@@ -1,13 +1,15 @@
 <?php 
+
+require "model/connexionModel.php";
+require "model/accountModel.php";
+require "model/operationModel.php";
+require "model/connexion.php";
+
 session_start();
 if(!isset($_SESSION["user"])) {
   header("Location:login.php");
   exit;
 }
-
-require "model/accountModel.php";
-require "model/operationModel.php";
-require "model/connexion.php";
 
 $accounts = getAccount($db, $_SESSION["user"]["id"]);
 

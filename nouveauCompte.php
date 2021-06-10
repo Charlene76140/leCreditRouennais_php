@@ -1,20 +1,34 @@
 <?php 
+
+require "model/connexionModel.php";
+require "model/entity/Account.php";
+require "model/accountModel.php";
+require "model/entity/Customer.php";
+
 session_start();
 if(!isset($_SESSION["user"])) {
   header("Location:login.php");
   exit;
-}
- 
-require "model/accountModel.php";
-require "model/connexion.php";
+} 
+
+$error="";
+$accountModel = new AccountModel();
+$account= new Account($_POST);
+$user = $_SESSION["user"];
+// var_dump($user);
 
 if(!empty($_POST)){
-  if(!addNewAccount($db, $_POST)){
-    echo "L'enregistrement a échoué";
+  if($_POST["account_amount"] > 50){
+    if(!$accountModel->addNewAccount($account, $user->getId())){
+      $error_bdd= "L'enregistrement a échoué";
+    }
+    else{
+      header("Location: index.php");
+      exit();
+    }
   }
   else{
-    header("Location: index.php");
-    exit();
+    $error = "Merci de saisir un montant superieur ou egal à 50€.";
   }
 }
 

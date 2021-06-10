@@ -2,7 +2,7 @@
 class AccountModel{
     private PDO $db;
 
-    //function pour récupérer tous les comptes en fonction de l'ID, sur la page index.php
+    //function pour récupérer tous les comptes en fonction de l'ID du client, sur la page index.php
     public function getAccount(int $id){
         $query = $this->db->prepare("SELECT * FROM account WHERE customer_id=:id");
         $query->execute([
@@ -15,6 +15,7 @@ class AccountModel{
         return $result;
     }
 
+    //fonction pour récupérer un seul compte en fonction de l'id du customer et l'id du compte
     public function getSingleAccount(int $id, int $customer_id){
         $query = $this->db->prepare("SELECT * FROM account WHERE id=:id AND customer_id=:customer_id");
         $query->execute([
@@ -43,19 +44,18 @@ class AccountModel{
     //     return $result;
     // }
 
-    // //fonction utilisée pour ajouter un nouveau compte sur la page nouveauCompte.php
-    // function addNewAccount(PDO $db, array $account):bool {
-    //     $query= $db->prepare("INSERT INTO account(account_type,account_number,account_amount, account_fees, creation_date, customer_id) 
-    //     VALUES(:account_type, 'FR457121 C741',  :account_amount, 19.90, NOW(), :customer_id)"
-    //     );
-
-    //     $result = $query->execute([
-    //         "account_type" => $account["account_type"],
-    //         "account_amount"=> $account["account_amount"],
-    //         "customer_id" => $_SESSION["user"]["id"]
-    //     ]);
-    //     return $result;
-    // }
+    //fonction utilisée pour ajouter un nouveau compte sur la page nouveauCompte.php
+    function addNewAccount(Account $account, int $id):bool {
+        $query= $this->db->prepare("INSERT INTO account(account_type,account_number,account_amount, account_fees, creation_date, customer_id) 
+        VALUES(:account_type, 'FR457121 C741',  :account_amount, 19.90, NOW(), :customer_id)"
+        );
+        $result = $query->execute([
+            "account_type" => $account->getAccount_type(),
+            "account_amount"=> $account->getAccount_amount(),
+            "customer_id" => $id
+        ]);
+        return $result;
+    }
 
     // function modifyAccount(PDO $db, array $updateAccount){
     //     $query = $db->prepare(
@@ -72,7 +72,7 @@ class AccountModel{
 
     public function __construct(){
         // l'objet est automatiquement connecté à la BDD
-        $this->db = new PDO('mysql:host=localhost;dbname=banque_php', 'root', '');
+        $this->db = ConnexionModel::getDB();
     }
 }
     

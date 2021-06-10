@@ -8,6 +8,9 @@ include "layout/header/header.php";
         <div class="text-center">
           <h2>Ouvrir un compte</h2>
           <!-- form used to create the customer's new account -->
+          <div>
+          <?php echo $error ?>
+          </div>
           <form method="post" action="" class="my-4">
             <p>
               <label for="account_type" class="form-label">Type de compte : </label><br />

@@ -6,7 +6,7 @@
         protected string $firstname;
         protected string $lastname;
         protected string $street_number;
-        protected string $street_adress;
+        protected string $street_address;
         protected string $area_code;
         protected string $city;
 
@@ -36,11 +36,11 @@
             return $this->email;
         }
 
-        public function setUser_Password(string $user_password){
+        public function setUser_password(string $user_password){
             $this->user_password = $user_password;
         }
 
-        public function getUser_Password(){
+        public function getUser_password(){
             return $this->user_password;
         }
 
@@ -68,12 +68,12 @@
             return $this->street_number;
         }
 
-        public function setStreet_adress(string $street_adress) {
-            $this->street_adress = $street_adress;
+        public function setStreet_address(string $street_address) {
+            $this->street_address = $street_address;
         }
 
-        public function getStreet_adress() {
-            return $this->street_adress;
+        public function getStreet_address() {
+            return $this->street_address;
         }
 
         public function setArea_code(string $area_code) {

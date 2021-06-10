@@ -13,7 +13,8 @@ class CustomerModel {
   }
 
   public function __construct(){
-    $this->db = new PDO('mysql:host=localhost;dbname=banque_php', 'root', '');
+    // l'objet est automatiquement connecté à la BDD
+    $this->db = ConnexionModel::getDB();
   }
 }
   

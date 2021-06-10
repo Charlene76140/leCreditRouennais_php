@@ -1,4 +1,5 @@
 <?php
+  require "model/connexionModel.php";
   require "model/entity/Customer.php";
   require "model/customerModel.php";
 
