@@ -16,7 +16,17 @@ include "layout/header/header.php";
               <?php endforeach; ?>
             </select>
           </p>
-          <input type="submit" value="Confirmer" class="btn colorButton"/>
+          <?php if(!empty($_POST["form2"])) :?>
+            <p class="bgColor mt-5 py-4"> Etes vous certain de vouloir supprimer le compte?</p>
+            <input type="submit" name = "form1" value="Oui" class="btn colorButton"/>
+            <a href="supprimerComptes.php" class="btn colorButton">Non</a>
+          <?php endif; ?>
+        </form>
+        
+        <form method="post" action="">
+          <?php if(empty($_POST)) :?>
+            <input type="submit" name = "form2" value="Confirmer" class="btn colorButton"/>
+          <?php endif; ?>
         </form>
       </div>
     </section>

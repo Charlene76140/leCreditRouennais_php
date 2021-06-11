@@ -15,7 +15,7 @@ $user= $_SESSION["user"];
 // $account= new Account($_POST["id"]);
 $accounts = $accountModel->getAccount($user->getId());
 
-if(!empty ($_POST)){
+if(!empty ($_POST["form1"])){
   $accountdelete= $accountModel->deleteAccount($_POST["id"], $user->getId());
   header("Location: index.php");
   exit();
