@@ -15,7 +15,7 @@ $error="";
 $accountModel = new AccountModel();
 $account= new Account($_POST);
 $user = $_SESSION["user"];
-// var_dump($user);
+
 
 if(!empty($_POST)){
   if($_POST["account_amount"] >= 50){

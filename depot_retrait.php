@@ -6,6 +6,7 @@ require "model/accountModel.php";
 require "model/entity/Operation.php";
 require "model/operationModel.php";
 require "model/entity/Customer.php";
+require "model/TransactionModel.php";
 
 
 session_start();
@@ -13,6 +14,9 @@ if(!isset($_SESSION["user"])) {
   header("Location:login.php");
   exit;
 }
+
+$transactionModel = new TransactionModel();
+
 
 $accountModel = new AccountModel();
 $operationModel = new OperationModel();
@@ -42,12 +46,15 @@ if(!empty($_POST)){
     }
   }
 
-  if(!$accountModel->modifyAccount($total , $account->getId())){
+  if(!$transactionModel->Transaction($total, $account->getId(), $operation, $_POST)){
     echo "L'enregistrement a échoué";
   }
-  elseif(!$operationModel->addOperation($operation, $_POST, $account->getId())){
-    echo "L'enregistrement a échoué";
-  }
+  // if(!$accountModel->modifyAccount($total , $account->getId())){
+  //   echo "L'enregistrement a échoué";
+  // }
+  // elseif(!$operationModel->addOperation($operation, $_POST, $account->getId())){
+  //   echo "L'enregistrement a échoué";
+  // }
   else{
     header("Location: index.php");
     exit();

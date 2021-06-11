@@ -26,14 +26,14 @@
         }
 
         public function getId(){
-            return $this->id;
+            return htmlspecialchars($this->id);
         }
 
         public function setEmail(string $email){
             $this->email = $email;
         }
         public function getEmail(){
-            return $this->email;
+            return htmlspecialchars($this->email);
         }
 
         public function setUser_password(string $user_password){
@@ -41,7 +41,7 @@
         }
 
         public function getUser_password(){
-            return $this->user_password;
+            return htmlspecialchars($this->user_password);
         }
 
         public function setFirstname(string $firstname) {
@@ -49,7 +49,7 @@
         }
 
         public function getFirstname() {
-            return $this->firstname;
+            return htmlspecialchars($this->firstname);
         }
 
         public function setLastname(string $lastname) {
@@ -57,7 +57,7 @@
         }
 
         public function getLastname() {
-            return $this->lastname;
+            return htmlspecialchars($this->lastname);
         }
 
         public function setStreet_number(string $street_number) {
@@ -65,7 +65,7 @@
         }
 
         public function getStreet_number() {
-            return $this->street_number;
+            return htmlspecialchars($this->street_number);
         }
 
         public function setStreet_address(string $street_address) {
@@ -73,7 +73,7 @@
         }
 
         public function getStreet_address() {
-            return $this->street_address;
+            return htmlspecialchars($this->street_address);
         }
 
         public function setArea_code(string $area_code) {
@@ -81,7 +81,7 @@
         }
 
         public function getArea_code() {
-            return $this->area_code;
+            return htmlspecialchars($this->area_code);
         }
 
         public function setCity(string $city) {
@@ -89,7 +89,7 @@
         }
 
         public function getCity() {
-            return $this->city;
+            return htmlspecialchars($this->city);
         }
     }
 ?>

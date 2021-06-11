@@ -12,7 +12,6 @@ if(!isset($_SESSION["user"])) {
 
 $accountModel = new AccountModel();
 $user= $_SESSION["user"];
-// $account= new Account($_POST["id"]);
 $accounts = $accountModel->getAccount($user->getId());
 
 if(!empty ($_POST["form1"])){
