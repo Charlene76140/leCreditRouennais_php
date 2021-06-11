@@ -2,6 +2,7 @@
 class TransactionModel{
     private PDO $db;
 
+    //function allowing to make a transaction between the account and the operations
     public function Transaction(float $total,int $id, Operation $operation , array $data){
         try{
             $this->db->beginTransaction();
@@ -32,7 +33,7 @@ class TransactionModel{
     }
 
     public function __construct(){
-        // l'objet est automatiquement connecté à la BDD
+        // the object is automatically connected to the database by calling the static getdb method
         $this->db = ConnexionModel::getDB();
     }
 }

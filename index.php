@@ -10,6 +10,7 @@
     exit;
   }
 
+  // I instantiate a new AccountModel object
   $accountModel = new AccountModel();
   $user = $_SESSION["user"];
   $accounts= $accountModel->getAccount($user->getId());

@@ -2,7 +2,7 @@
 class AccountModel{
     private PDO $db;
 
-    //function pour récupérer tous les comptes en fonction de l'ID du client, sur la page index.php
+    //function to retrieve all accounts according to the customer's ID, on the index.php page
     public function getAccount(int $id){
         $query = $this->db->prepare("SELECT * FROM account WHERE customer_id=:id");
         $query->execute([
@@ -15,7 +15,7 @@ class AccountModel{
         return $result;
     }
 
-    //fonction pour récupérer un seul compte en fonction de l'id du customer et l'id du compte
+    //function to retrieve a single account based on customer id and account id
     public function getSingleAccount(int $id, int $customer_id){
         $query = $this->db->prepare("SELECT * FROM account WHERE id=:id AND customer_id=:customer_id");
         $query->execute([
@@ -44,7 +44,7 @@ class AccountModel{
     //     return $result;
     // }
 
-    //fonction utilisée pour ajouter un nouveau compte sur la page nouveauCompte.php
+    //function used to add a new account on the page nouveauCompte.php
     public function addNewAccount(Account $account, int $id):bool {
         $query= $this->db->prepare("INSERT INTO account(account_type,account_number,account_amount, account_fees, creation_date, customer_id) 
         VALUES(:account_type, 'FR457121 C741',  :account_amount, 19.90, NOW(), :customer_id)"
@@ -57,18 +57,18 @@ class AccountModel{
         return $result;
     }
 
-    public function modifyAccount(float $amount, int $id) : bool{
-        $query = $this->db->prepare(
-            "UPDATE account SET account_amount=:account_amount 
-            WHERE  id=:id"
-        );
+    // public function modifyAccount(float $amount, int $id) : bool{
+    //     $query = $this->db->prepare(
+    //         "UPDATE account SET account_amount=:account_amount 
+    //         WHERE  id=:id"
+    //     );
 
-        $result = $query->execute([
-            "account_amount" => $amount,
-            "id" => $id
-        ]);
-        return $result;
-    }
+    //     $result = $query->execute([
+    //         "account_amount" => $amount,
+    //         "id" => $id
+    //     ]);
+    //     return $result;
+    // }
 
     public function deleteAccount(int $id, int $customer_id){
         $query= $this->db->prepare(
@@ -82,7 +82,7 @@ class AccountModel{
     }
 
     public function __construct(){
-        // l'objet est automatiquement connecté à la BDD
+        // the object is automatically connected to the database by calling the static getdb method
         $this->db = ConnexionModel::getDB();
     }
 }

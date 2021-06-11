@@ -7,13 +7,13 @@
 
 
   if(isset($_POST["email"]) AND isset($_POST["user_password"])) {
-    // customerbdd est objet de la class Customer
+    // customerbdd is object of the Customer class
     $customerbdd = $customerModel->getCustomerByEmail($_POST);
 
     if($customerbdd){
       if(password_verify($_POST["user_password"], $customerbdd->getUser_Password())){
         session_start();
-        //session user stock l'objet customer
+        //session user stock the customer object
         $_SESSION["user"] = $customerbdd;
         var_dump($_SESSION["user"]);
         header("Location:index.php");

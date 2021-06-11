@@ -1,4 +1,5 @@
 <?php
+    //class that does not need to be instantiated, so abstracted
     abstract class ConnexionModel{
         const HOST = "localhost";
         const NAME = "banque_php";
