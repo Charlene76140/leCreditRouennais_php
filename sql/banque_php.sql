@@ -29,7 +29,7 @@ CREATE TABLE account (
     creation_date DATE NOT NULL,
     customer_id INT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (customer_id) REFERENCES customer(id)
+    FOREIGN KEY (customer_id) REFERENCES customer(id) ON DELETE CASCADE
 )
 ENGINE=InnoDB;
 
@@ -41,7 +41,7 @@ CREATE TABLE operation (
     amount DECIMAL(10,2) NOT NULL,
     account_id INT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (account_id) REFERENCES account(id)
+    FOREIGN KEY (account_id) REFERENCES account(id) ON DELETE CASCADE
 )
 ENGINE=InnoDB;
 
@@ -68,7 +68,8 @@ VALUES
 ('Credit', 'epargne programmé','2021-05-05', 150, 2),
 ('Credit', 'epargne programmé','2021-05-05', 75, 3),
 ('Debit', 'Carrefour Rouen', '2021-05-14', -152.28, 4),
-('Debit', 'métropole eau', '2021-05-6', -35, 4)
+('Debit', 'métropole eau', '2021-05-6', -35, 4),
+('Credit', 'epargne programmé', '2021-05-6', 350, 5)
 ;
 
  

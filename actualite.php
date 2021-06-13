@@ -1,13 +1,13 @@
 <?php 
+require "model/connexionModel.php";
+
 session_start();
-include ("layout/header/header.php"); 
+if(!isset($_SESSION["user"])) {
+  header("Location:login.php");
+  exit;
+}
+
+
+require "view/actualiteView.php";
 ?>
 
-  <main>
-    <section class="container my-5">
-      <h2>Nos Actualités</h2>
-      
-    </section>
-  </main>
-  
-<?php include ("layout/footer/footer.php"); ?>
