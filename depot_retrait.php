@@ -6,7 +6,7 @@
   require "model/entity/Operation.php";
   require "model/operationModel.php";
   require "model/entity/Customer.php";
-  require "model/TransactionModel.php";
+  require "model/transactionModel.php";
 
   session_start();
   if(!isset($_SESSION["user"])) {

@@ -1,7 +1,7 @@
 <?php 
 require "model/connexionModel.php";
 require "model/entity/Account.php";
-require "model/AccountModel.php";
+require "model/accountModel.php";
 require "model/entity/Customer.php";
 
 session_start();
